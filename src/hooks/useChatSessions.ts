@@ -29,9 +29,10 @@ export function useChatSessions() {
 
   const createSession = useMutation({
     mutationFn: async (title?: string) => {
+      if (!profile?.id) throw new Error("Not authenticated");
       const { data, error } = await supabase
         .from("chat_sessions")
-        .insert({ user_id: profile!.id, title: title || "New Chat" })
+        .insert({ user_id: profile.id, title: title || "New Chat" })
         .select()
         .single();
       if (error) throw error;

@@ -264,12 +264,16 @@ export default function Settings() {
               icon={Lock}
               label="Change Password"
               description="Update your password"
-              onClick={() => {
-                toast({
-                  title: "Password Reset",
-                  description: "Check your email for password reset instructions",
-                });
-                supabase.auth.resetPasswordForEmail(user?.email || "");
+              onClick={async () => {
+                const { error } = await supabase.auth.resetPasswordForEmail(user?.email || "");
+                if (error) {
+                  toast({ variant: "destructive", title: "Error", description: error.message });
+                } else {
+                  toast({
+                    title: "Password Reset",
+                    description: "Check your email for password reset instructions",
+                  });
+                }
               }}
             />
             <SettingsItem
@@ -306,7 +310,7 @@ function SettingsItem({
   icon: any;
   label: string;
   description?: string;
-  onClick: () => void;
+  onClick: () => void | Promise<void>;
 }) {
   return (
     <button

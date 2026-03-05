@@ -243,7 +243,7 @@ function AdminDeleteButton({ activityId, name }: { activityId: string; name: str
       if (error) throw error;
       toast.success(`"${name}" deleted`);
       queryClient.invalidateQueries({ queryKey: ["activities"] });
-      queryClient.invalidateQueries({ queryKey: ["whats-on"] });
+      queryClient.invalidateQueries({ queryKey: ["whats-on-today"] });
     } catch (err: any) {
       toast.error(err.message || "Delete failed");
     } finally {
