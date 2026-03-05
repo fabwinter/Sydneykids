@@ -1,19 +1,7 @@
 import { useState, useEffect } from "react";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { useNavigate } from "react-router-dom";
-import { 
-  ArrowLeft, 
-  User, 
-  Bell, 
-  Shield, 
-  LogOut, 
-  ChevronRight,
-  Camera,
-  Mail,
-  Lock,
-  Loader2,
-  Check
-} from "lucide-react";
+import { ArrowLeft, User, Bell, Shield, LogOut, ChevronRight, Camera, Mail, Lock, Loader as Loader2, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

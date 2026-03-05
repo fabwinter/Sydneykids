@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Star, Heart, Coffee, Waves, TreePine, Utensils, Wine, Landmark, ShoppingBag, Dumbbell, Cake, Sparkles, Loader2, Trash2, Award } from "lucide-react";
+import { MapPin, Star, Heart, Coffee, Waves, TreePine, Utensils, Wine, Landmark, ShoppingBag, Dumbbell, Cake, Sparkles, Loader as Loader2, Trash2, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useIsActivitySaved, useToggleSavedItem } from "@/hooks/useSavedItems";
